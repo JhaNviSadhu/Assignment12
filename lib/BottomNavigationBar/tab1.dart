@@ -25,17 +25,18 @@ class Tab1 extends StatelessWidget {
                   primary: themecolor,
                 ),
                 onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DetailPage(
-                        index: "$index",
-                        img: listofgrid[index].image,
-                        aboutFood: listofgrid[index].subtitle ?? " ",
-                        food: listofgrid[index].title ?? " ",
-                        foodDesc: listofgrid[index].desc ?? " ",
-                        foodPrice: listofgrid[index].price ?? 0,
-                      ),
-                    )),
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => DetailPage(
+                      index: "$index",
+                      img: listofgrid[index].image,
+                      aboutFood: listofgrid[index].subtitle ?? " ",
+                      food: listofgrid[index].title ?? " ",
+                      foodDesc: listofgrid[index].desc ?? " ",
+                      foodPrice: listofgrid[index].price ?? 0,
+                    ),
+                  ),
+                ),
                 child: const Text("cheackout"),
               )),
               leading: ClipRRect(
@@ -43,8 +44,9 @@ class Tab1 extends StatelessWidget {
                   child: Hero(
                       tag: "$index",
                       child: Image.asset(listofgrid[index].image))),
-              title: Text("${listofgrid[index].title}"),
-              subtitle: Text("${listofgrid[index].subtitle}"),
+              title: Text("${listofgrid[index].title}",
+                  maxLines: 1, overflow: TextOverflow.ellipsis),
+              subtitle: Text("${listofgrid[index].subtitle}",maxLines: 1, overflow: TextOverflow.ellipsis),
             ),
           ),
         );

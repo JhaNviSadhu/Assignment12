@@ -29,6 +29,7 @@ class _DetailPageState extends State<DetailPage> {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        
         backgroundColor: Colors.transparent,
         elevation: 0,
       ),
@@ -39,19 +40,14 @@ class _DetailPageState extends State<DetailPage> {
         ),
         child: Column(
           children: [
-            ClipRRect(
-              borderRadius: const BorderRadius.only(
-                  bottomLeft: Radius.circular(20),
-                  bottomRight: Radius.circular(20)),
-              child: SizedBox(
-                height: MediaQuery.of(context).size.height / 2,
-                width: MediaQuery.of(context).size.width,
-                child: Hero(
-                  tag: widget.index,
-                  child: Image.asset(
-                    widget.img,
-                    fit: BoxFit.cover,
-                  ),
+            SizedBox(
+              height: MediaQuery.of(context).size.height / 2,
+              width: MediaQuery.of(context).size.width,
+              child: Hero(
+                tag: widget.index,
+                child: Image.asset(
+                  widget.img,
+                  fit: BoxFit.cover,
                 ),
               ),
             ),
@@ -64,13 +60,15 @@ class _DetailPageState extends State<DetailPage> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
-                      widget.food,
-                      style: kFont,
-                    ),
+                    Text(widget.food,
+                        style: kFont,
+                        maxLines: 2,
+                        overflow: TextOverflow.ellipsis),
                     const SizedBox(height: 10),
                     Text(
                       widget.aboutFood,
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
                       style: kFont.copyWith(
                           fontWeight: FontWeight.normal, fontSize: 16),
                     ),
