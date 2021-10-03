@@ -1,4 +1,4 @@
-import 'package:assignment_12/bottam_navigation_bar.dart';
+import 'package:assignment_12/BottomNavigationBar/bottam_navigation_bar.dart';
 import 'package:flutter/material.dart';
 
 void main() {
