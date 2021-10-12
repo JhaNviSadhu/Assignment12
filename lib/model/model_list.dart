@@ -4,6 +4,7 @@ class ModelList {
   final String? subtitle;
   final String? desc;
   final int? price;
+  
   ModelList(
       {this.title, this.subtitle, this.desc, this.price, required this.image});
 }
